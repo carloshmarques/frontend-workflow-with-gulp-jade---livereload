@@ -42,3 +42,8 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(outputDir + '/css'));
 
 });
+gulp.task('watch', function() {
+    gulp.watch('src/templates/**/*.jade', gulp.series('jade'));
+    gulp.watch('src/js/**/*.js', gulp.series('js'));
+    gulp.watch('src/sass/**/*.scss', gulp.series('sass'));
+});
