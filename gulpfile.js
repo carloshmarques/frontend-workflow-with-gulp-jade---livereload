@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass')(require('sass')),
-
+    connect = require('gulp-connect'),
+  
     gulpif = require('gulp-if');
 
 
@@ -47,3 +48,16 @@ gulp.task('watch', function() {
     gulp.watch('src/js/**/*.js', gulp.series('js'));
     gulp.watch('src/sass/**/*.scss', gulp.series('sass'));
 });
+
+
+gulp.task('connect', function() {
+    (connect.server)
+    livereload: true;
+    root: ['outputDir'];
+    browser: {'Google Chrome'};
+  
+}); 
+
+//exports.default = defaultTask
+
+gulp.task('default', gulp.series(['js', 'jade', 'sass', 'watch', 'connect' ] ));
