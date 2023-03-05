@@ -53,8 +53,12 @@ gulp.task('watch', function() {
 // WEB SERVER
 gulp.task('connect', function() {
     connect.server({
-      livereload: true
+      livereload: true,
+      root: outputDir,
+      port: "8080",
+      browser: "Google Chrome"
     });
+   
   });
 //exports.default = defaultTask
 
