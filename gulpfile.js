@@ -50,14 +50,12 @@ gulp.task('watch', function() {
 });
 
 
+// WEB SERVER
 gulp.task('connect', function() {
-    (connect.server)
-    livereload: true;
-    root: ['outputDir'];
-    browser: {'Google Chrome'};
-  
-}); 
-
+    connect.server({
+      livereload: true
+    });
+  });
 //exports.default = defaultTask
 
 gulp.task('default', gulp.series(['js', 'jade', 'sass', 'watch', 'connect' ] ));
