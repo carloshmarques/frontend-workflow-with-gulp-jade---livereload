@@ -20,14 +20,16 @@ var outputDir ='builds/development';
 gulp.task('jade', function() {
     return gulp.src('src/templates/**/*.jade')
         .pipe(jade())
-        .pipe(gulp.dest(outputDir));
+        .pipe(gulp.dest(outputDir))
+        .pipe(connect.reload());
 });
 
 gulp.task('js', function() {
     return gulp.src('src/js/main.js')
         .pipe(browserify({debug: env === 'development' }))
         .pipe(gulpif(env === 'production', uglify()))
-        .pipe(gulp.dest(outputDir + '/js'));
+        .pipe(gulp.dest(outputDir + '/js'))
+        .pipe(connect.reload());
 });
 
 gulp.task('sass', function() {
@@ -40,7 +42,8 @@ gulp.task('sass', function() {
     }
     return gulp.src('src/sass/main.scss')
         .pipe(sass(config))
-        .pipe(gulp.dest(outputDir + '/css'));
+        .pipe(gulp.dest(outputDir + '/css'))
+        .pipe(connect.reload());
 
 });
 gulp.task('watch', function() {
@@ -51,15 +54,20 @@ gulp.task('watch', function() {
 
 
 // WEB SERVER
-gulp.task('connect', function() {
+gulp.task('connect', function(){
     connect.server({
-      livereload: true,
-      root: outputDir,
-      port: "8080",
-      browser: "Google Chrome"
+        root: [outputDir],
+        browser: 'Google Chrome',
+        port: 8000,
+        base: 'http://localhost/',
+        livereload: true,
+       
     });
-   
-  });
+
+
+ }); 
+
+
 //exports.default = defaultTask
 
-gulp.task('default', gulp.series(['js', 'jade', 'sass', 'watch', 'connect' ] ));
+gulp.task('default', gulp.series(['js', 'sass','jade', 'watch', 'connect' ] ));
