@@ -3,8 +3,7 @@ var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass')(require('sass')),
-    connect = require('gulp-connect'),
-  
+    connect = require('gulp-connect'), 
     gulpif = require('gulp-if');
 
 
@@ -50,20 +49,19 @@ gulp.task('watch', function() {
     gulp.watch('src/templates/**/*.jade', gulp.series('jade'));
     gulp.watch('src/js/**/*.js', gulp.series('js'));
     gulp.watch('src/sass/**/*.scss', gulp.series('sass'));
+    
 });
-
 
 // WEB SERVER
 gulp.task('connect', function(){
     connect.server({
         root: [outputDir],
-        browser: 'Google Chrome',
-        port: 8000,
-        base: 'http://localhost/',
         livereload: true,
-       
-    });
+       // open: true,
+       // fallback: outputDir + '/index.html',
 
+        base: 'http://localhost/8000'      
+    });
 
  }); 
 
