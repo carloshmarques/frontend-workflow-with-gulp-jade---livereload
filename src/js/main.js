@@ -1,2 +1,2 @@
 var logger = require('./logger');
-logger.log('Hurray, it works!fine:)');
+logger.log('fine:)');

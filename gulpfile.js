@@ -4,11 +4,12 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass')(require('sass')),
     connect = require('gulp-connect'), 
-    gulpif = require('gulp-if');
-
+    gulpif = require('gulp-if'),
+    open = require('gulp-open');
 
 var env = process.env.NODE_ENV || 'development';
 var outputDir ='builds/development';
+var sourceDir = './';
 
 /*
  * by default gulp task are set to a development mode as seen on the line var env = process.env.NODE_ENV || 'development';
@@ -45,27 +46,34 @@ gulp.task('sass', function() {
         .pipe(connect.reload());
 
 });
-gulp.task('watch', function() {
-    gulp.watch('src/templates/**/*.jade', gulp.series('jade'));
-    gulp.watch('src/js/**/*.js', gulp.series('js'));
-    gulp.watch('src/sass/**/*.scss', gulp.series('sass'));
+gulp.task('watch', function() {   
     
+    gulp.watch('src/templates/**/*.jade', gulp.series('jade'))
+    gulp.watch('src/js/**/*.js', gulp.series('js'))
+    gulp.watch('src/sass/**/*.scss', gulp.series('sass'))
+   
 });
-
+gulp.task('open', function(){
+    gulp.src(outputDir + '/index.html')
+    .pipe(open());
+  });
 // WEB SERVER
-gulp.task('connect', function(){
-    connect.server({
-        root: [outputDir],
-        livereload: true,
-       // open: true,
-       // fallback: outputDir + '/index.html',
+gulp.task('connect', function() {
 
-        base: 'http://localhost/8000'      
-    });
-
- }); 
+   // var options={
+     //   uri: 'htpp://localhost:8080/' + outputDir + '/index.html',        
+      //  };
+        connect.server({
+            root: outputDir + '/index.html',
+            app: 'chrome',
+            base:'htpp://localhost:3003/',
+            livereload: true
+            });
+            return gulp.src(outputDir + '/index.html')
+            .pipe(open());           
+            });
 
 
 //exports.default = defaultTask
 
-gulp.task('default', gulp.series(['js', 'sass','jade', 'watch', 'connect' ] ));
+gulp.task('default', gulp.series(['js', 'sass','jade', 'watch' ] ));
