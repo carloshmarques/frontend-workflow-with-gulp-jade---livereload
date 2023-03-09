@@ -13,7 +13,7 @@ var sourceDir = './';
 
 /*
  * by default gulp task are set to a development mode as seen on the line var env = process.env.NODE_ENV || 'development';
- * to run tasks in a production mode, type in terminal NODE_ENV=production and task ex: NODE_ENV= production gulp js
+ * to run tasks in a production mode, type in terminal NODE_ENV=production and task ex: NODE_ENV=production gulp js
  *
  */
 
@@ -46,34 +46,38 @@ gulp.task('sass', function() {
         .pipe(connect.reload());
 
 });
-gulp.task('watch', function() {   
-    
-    gulp.watch('src/templates/**/*.jade', gulp.series('jade'))
-    gulp.watch('src/js/**/*.js', gulp.series('js'))
-    gulp.watch('src/sass/**/*.scss', gulp.series('sass'))
-   
+
+
+
+
+gulp.task('watch', function(){            
+    connect.server({   
+        livereload: true,       
+        root: outputDir,
+        base: 'htpp://localhost:8080/',
+        fallback: outputDir + '/index.html'          
+        });   
+    gulp.watch('src/templates/**/*.jade', gulp.series('jade')),
+    gulp.watch('src/js/**/*.js', gulp.series('js')),
+    gulp.watch('src/sass/**/*.scss', gulp.series('sass'))   
 });
-gulp.task('open', function(){
-    gulp.src(outputDir + '/index.html')
-    .pipe(open());
-  });
+
 // WEB SERVER
-gulp.task('connect', function() {
+gulp.task('connect', function(){
+    connect.server({
+        root: outputDir,
+        base: 'htpp://localhost:8080/',
+        fallback: outputDir + '/index.html',
+        livereload: true
+    });
+   // return gulp.src(outputDir + '/index.html')
+   // .pipe(open());
+});
 
-   // var options={
-     //   uri: 'htpp://localhost:8080/' + outputDir + '/index.html',        
-      //  };
-        connect.server({
-            root: outputDir + '/index.html',
-            app: 'chrome',
-            base:'htpp://localhost:3003/',
-            livereload: true
-            });
-            return gulp.src(outputDir + '/index.html')
-            .pipe(open());           
-            });
+    
+   
 
 
-//exports.default = defaultTask
+//exports.default = defaultTaskS
 
 gulp.task('default', gulp.series(['js', 'sass','jade', 'watch' ] ));
