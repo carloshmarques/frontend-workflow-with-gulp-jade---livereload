@@ -17,6 +17,8 @@ var sourceDir = './';
  *
  */
 
+
+//jade task
 gulp.task('jade', function() {
     return gulp.src('src/templates/**/*.jade')
         .pipe(jade())
@@ -24,6 +26,7 @@ gulp.task('jade', function() {
         .pipe(connect.reload());
 });
 
+// js task
 gulp.task('js', function() {
     return gulp.src('src/js/main.js')
         .pipe(browserify({debug: env === 'development' }))
@@ -32,6 +35,7 @@ gulp.task('js', function() {
         .pipe(connect.reload());
 });
 
+// sass task
 gulp.task('sass', function() {
     var config = {};
     if (env === 'development'){
@@ -48,7 +52,7 @@ gulp.task('sass', function() {
 });
 
 
-
+// watch task
 
 gulp.task('watch', function(){            
     var options = {
@@ -81,23 +85,6 @@ gulp.task('connect', function(){
         gulp
         .src(outputDir +'/index.html')
         .pipe(open(options))
-
-
-   /* connect.server({
-        root: outputDir,
-        base: 'htpp://localhost:8080/',
-        fallback: outputDir + '/index.html',
-        livereload: true
-    });
-   // return gulp.src(outputDir + '/index.html')
-   // .pipe(open());
-   */
 });
-
-    
-   
-
-
-//exports.default = defaultTaskS
 
 gulp.task('default', gulp.series(['js', 'sass','jade', 'watch' ] ));
