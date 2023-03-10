@@ -51,20 +51,39 @@ gulp.task('sass', function() {
 
 
 gulp.task('watch', function(){            
-    connect.server({   
-        livereload: true,       
-        root: outputDir,
-        base: 'htpp://localhost:8080/',
-        fallback: outputDir + '/index.html'          
-        });   
-    gulp.watch('src/templates/**/*.jade', gulp.series('jade')),
-    gulp.watch('src/js/**/*.js', gulp.series('js')),
-    gulp.watch('src/sass/**/*.scss', gulp.series('sass'))   
+    var options = {
+        uri: 'http://localhost:8080'
+      }
+        connect.server({
+            root: outputDir,
+            livereload: true
+        });
+    
+        gulp
+        .src(outputDir +'/index.html')
+        .pipe(open(options))
+
+        gulp.watch('src/templates/**/*.jade', gulp.series('jade')),
+        gulp.watch('src/js/**/*.js', gulp.series('js')),
+        gulp.watch('src/sass/**/*.scss', gulp.series('sass'))   
 });
 
 // WEB SERVER
 gulp.task('connect', function(){
-    connect.server({
+    var options = {
+        uri: 'http://localhost:8080'
+      }
+        connect.server({
+            root: outputDir,
+            livereload: true
+        });
+    
+        gulp
+        .src(outputDir +'/index.html')
+        .pipe(open(options))
+
+
+   /* connect.server({
         root: outputDir,
         base: 'htpp://localhost:8080/',
         fallback: outputDir + '/index.html',
@@ -72,6 +91,7 @@ gulp.task('connect', function(){
     });
    // return gulp.src(outputDir + '/index.html')
    // .pipe(open());
+   */
 });
 
     
