@@ -21,7 +21,7 @@ var sourceDir = './';
 //jade task
 gulp.task('jade', function() {
     return gulp.src('src/templates/**/*.jade')
-        .pipe(jade())
+        .pipe(jade())      
         .pipe(gulp.dest(outputDir))
         .pipe(connect.reload());
 });
