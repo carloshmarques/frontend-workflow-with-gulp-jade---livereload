@@ -1,5 +1,10 @@
 @import "variables";
-
 body {
-    color: $venus;
+    color: $white;
+    background-color: $venus;
+}
+
+footer {
+     margin: 35px 0 15px 0; 
+     text-align: center
 }

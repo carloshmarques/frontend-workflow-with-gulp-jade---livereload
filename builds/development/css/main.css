@@ -1,3 +1,9 @@
 body {
-  color: #915d91;
+  color: #ffffff;
+  background-color: #915d91;
+}
+
+footer {
+  margin: 35px 0 15px 0;
+  text-align: center;
 }
