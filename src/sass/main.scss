@@ -1,0 +1,14 @@
+@import "variables";
+body {
+    color: $white;
+    background-color: $venus;
+    h1 {color: $red;}
+    p{color: $Blue;}
+}
+
+footer {
+     margin: 35px 0 15px 0; 
+     text-align: center;
+     p{color:$white;}
+    
+}

@@ -5,7 +5,7 @@
 <div align="center">
   <!-- Change your logo -->
   <a href="https://github.com/carloshmarques/frontend-workflow-with-gulp-jade---livereload">
-    <img width="100%" src="https://i.imgur.com/SVvgxJF.png" alt="@carloshmarques/frontend-workflow-with-gulp-jade---livereload's logo">
+    <img width="100%" src="https://i.imgur.com/rj1HPjW.png" alt="@carloshmarques/frontend-workflow-with-gulp-jade---livereload's logo">
   </a>
   <br>
   <a href="https://github.com/carloshmarques/frontend-workflow-with-gulp-jade---livereload/issues">
