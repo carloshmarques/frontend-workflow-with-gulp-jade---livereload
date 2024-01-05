@@ -1,4 +1,4 @@
-###> Josee9988/project-template ###
+###> carloshmarques/frontend-workflow-with-gulp-jade---livereload ###
 
 ##### Folders #####
 build/
@@ -22,4 +22,4 @@ ignore.*
 .env.test
 *.pem
 
-###< Josee9988/project-template ###
+###< carloshmarques/frontend-workflow-with-gulp-jade---livereload ###
