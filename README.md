@@ -36,7 +36,7 @@
 
 * By default gulp task are set to a development mode as seen on the line var env = process.env.NODE_ENV || 'development'; in the gulpfile.js
 * To run tasks in a production mode, type in terminal NODE_ENV=production or task ex: NODE_ENV=production gulp js
-* To use the chrome browser or another browser,see the Gulp.task watch in the Gulpfile.js and the commented instructions.
+* To use the chrome browser or another browser, see the Gulp.task watch in the Gulpfile.js and the commented instructions.
   
 ---
 
@@ -68,19 +68,16 @@
 
 <!-- Change your small logo -->
 
-<a href="https://github.com/carloshmarques/frontend workflow-with-gulp-jade---livereload">
-<img alt="@carloshmarques/carloshmarques's brand logo without text" align="right" src="https://i.imgur.com/EywWORF.png" width="10%" />
+<a href="https://github.com/carloshmarques/carloshmarques">
+  <img alt="@carloshmarques/carloshmarques's brand logo without text" align="right" src="https://i.imgur.com/EywWORF.png" width="10%" />
 </a>
-
-We are currently looking for new donators to help and maintain this project! ❤️
-
-By donating, you will help the development of this project, and *you will be featured in this frontend-workflow-with-gulp-jade---livereload's README.md*, so everyone can see your kindness and visit your content ⭐.
-
-<a href="https://github.com/sponsors/carloshmarques"> <!-- MODIFY THIS LINK TO YOUR MAIN DONATING SITE IF YOU ARE NOT IN THE GITHUB SPONSORS PROGRAM -->
+<p>We are currently looking for new donators to help and maintain this project! ❤️
+By donating, you will help the development of this project,
+and *you will be featured in this <span style="color:darkolivegreen;font-weight:bold">frontend-workflow-with-gulp-jade---livereload's README.md*</span>,
+so everyone can see your kindness and visit your content ⭐.</p>
 <a href="https://github.com/sponsors/carloshmarques"><!-- MODIFY THIS LINK TO YOUR MAIN DONATING SITE IF YOU ARE NOT IN THE GITHUB SPONSORS PROGRAM --><img alt= "logo" src="https://img.shields.io/badge/Sponsor-carloshmarques/carloshmarques-blue?logo=github-sponsors&style=for-the-badge&color=red"></a><br><br>
 
 <!-- LINK TO YOUR DONATING PAGES HERE -->
-
 ---
 
 ## 🕵️ Extra recommendations
