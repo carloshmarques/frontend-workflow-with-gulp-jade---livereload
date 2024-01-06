@@ -34,8 +34,8 @@
 
 ## 🚀 **Usage**
 
-* By default gulp task are set to a development mode as seen on the line var env = process.env.NODE_ENV || 'development'; in the gulpfile.js
-* To run tasks in a production mode, type in terminal NODE_ENV=production or task ex: NODE_ENV=production gulp js
+* By default gulp task are set to a development mode as seen on the line: var env = process.env.NODE_ENV || 'development' in the gulpfile.js
+* To run tasks in a production mode, type in terminal NODE_ENV=production and the task you want run, ex: NODE_ENV=production gulp js
 * To use the chrome browser or another browser, see the Gulp.task watch in the Gulpfile.js and the commented instructions.
   
 ---
@@ -61,7 +61,7 @@
 
 ## 📸 **Screenshots**
 
-<img align="center" alt="index.html" height="300em" width="50%" src="https://i.imgur.com/YSDkMnj.png" />
+<img align="center" alt="index.html" height="200em" width="40%" src="https://i.imgur.com/YSDkMnj.png" />
 
 ---
 
