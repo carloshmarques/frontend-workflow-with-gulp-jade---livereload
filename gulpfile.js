@@ -58,10 +58,12 @@ gulp.task('watch', function(){
     var options = {
         uri: 'http://localhost:8080',
         //app : 'chrome' 
-    /*TTo use the chrome browser or another browser,
+    /*
+     To use the chrome browser or another browser,
      uncomment the above line and replace the executable name with the browser of your choice,
      for example: chrome.exe('chrome'). 
-     If the line above is commented out, gulp will open the default browser.*/
+     If the line above is commented out, gulp will open the default browser.
+     */
 
       }
         connect.server({
@@ -83,10 +85,13 @@ gulp.task('connect', function(){
     var options = {
         uri: 'http://localhost:8080',
         //app : 'chrome' 
-    /*TTo use the chrome browser or another browser,
+    /*
+     To use the chrome browser or another browser,
      uncomment the above line and replace the executable name with the browser of your choice,
      for example: chrome.exe('chrome'). 
-     If the line above is commented out, gulp will open the default browser.*/
+     If the line above is commented out, gulp will open the default browser.
+     */
+        
       }
         connect.server({
             root: outputDir,
