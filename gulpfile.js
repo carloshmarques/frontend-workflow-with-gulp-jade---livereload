@@ -8,7 +8,7 @@ var gulp = require('gulp'),
     open = require('gulp-open');
 
 var env = process.env.NODE_ENV || 'development';
-var outputDir ='builds/development';
+var outputDir ='dist/';
 var sourceDir = './';
 
 /*

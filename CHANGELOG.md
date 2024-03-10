@@ -12,3 +12,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Added
 
 * The basic project structure from **[josee9988/project-template](https://github.com/Josee9988/project-template)**.
+
+---
+
+## [**0.0.1**] - 2024-01-05
+
+### Added
+
+* Redone gulfile.js
